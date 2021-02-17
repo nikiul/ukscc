@@ -247,6 +247,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 49%;
 }
 .table-wrap h3 {
   margin: 0;
@@ -260,7 +261,7 @@ body {
   color: #FEB74F;
 }
 .price__table {
-  width: 49%;
+  width: 100%;
   border-collapse: separate;
   border-radius: 5px 5px 0px 0px;
   border-spacing: 0;
