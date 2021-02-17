@@ -212,6 +212,25 @@ body {
   background: -webkit-gradient(linear, left top, right bottom, color-stop(49.5%, transparent), color-stop(50%, #262730)) left / 50.025% 100% no-repeat, -webkit-gradient(linear, right top, left bottom, color-stop(49.5%, transparent), color-stop(50%, #262730)) right / 50.025% 100% no-repeat;
   background: linear-gradient(to right bottom, transparent 49.5%, #262730 50%) left / 50.025% 100% no-repeat, linear-gradient(to left bottom, transparent 49.5%, #262730 50%) right / 50.025% 100% no-repeat;
 }
+.price__bg {
+  position: relative;
+}
+.price__bg::before {
+  position: absolute;
+  content: url('../img/price/price-bg1.png');
+  left: 0;
+  top: 50px;
+}
+.price__bg::after {
+  position: absolute;
+  content: url('../img/price/price-bg2.png');
+  right: 100px;
+  top: 50px;
+}
+.price__content {
+  position: relative;
+  z-index: 2;
+}
 .price__title {
   text-align: center;
   margin: 0;
@@ -262,6 +281,12 @@ body {
 }
 .price__table {
   width: 100%;
+  border-collapse: separate;
+  border-radius: 5px 5px 0px 0px;
+  border-spacing: 0;
+}
+.price__table-upper {
+  width: 49%;
   border-collapse: separate;
   border-radius: 5px 5px 0px 0px;
   border-spacing: 0;

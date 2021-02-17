@@ -16,12 +16,6 @@
     linear-gradient(to left top, transparent 49.5%, #262730  50%) right / 50.025% 100% no-repeat;
    }
 
-//    &::before {
-//        position: absolute;
-//        content: url('../img/price/price-bg1.png');
-//        left: 0;
-//    }
-
    &::after {
     content: '';
     position: absolute;
@@ -34,8 +28,27 @@
    }
 }
 
-.price__content {
+.price__bg {
+    position: relative;
 
+    &::before {
+        position: absolute;
+        content: url('../img/price/price-bg1.png');
+        left: 0;
+        top: 50px;
+    }
+
+    &::after {
+        position: absolute;
+        content: url('../img/price/price-bg2.png');
+        right: 100px;
+        top: 50px;
+    }
+}
+
+.price__content {
+    position: relative;
+    z-index: 2;
 }
 
 .price__title {
@@ -52,54 +65,11 @@
     }
 }
 
-// .price__table-wrap1 {
-//     display: flex;
-//     justify-content: space-between;
-//     flex-wrap: wrap;
-//     margin-bottom: 57px;
-// }
-
-// .price__table1 {
-//     width: 49%;
-// }
-
-// .row__title {
-//     font-weight: bold;
-//     font-size: 15px;
-//     line-height: 150%;
-//     color: #302F35; 
-// }
-
-// .table__row {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 15px 20px;
-//     background-color: #262730;
-//     border: 1px solid #AEAEAE;
-
-//     &:first-child {
-//         background-color: #FEB74F;
-//         border-radius: 5px 5px 0px 0px;
-//     }
-// }
-
-// .row__item {
-//     margin: 0;
-//     font-weight: normal;
-//     font-size: 15px;
-//     line-height: 150%;
-//     color: #AEAEAE;
-
-//     &:last-child {
-//         padding-right: 51px;
-//     }
-// }
-
 .price__table-wrap {
     display: flex;
     justify-content: space-between;
     margin-bottom: 57px;
+    // width: 100%;
 
     &:last-child {
         margin-bottom: 0;
@@ -128,6 +98,13 @@
 
 .price__table {
     width: 100%;
+    border-collapse: separate;
+    border-radius: 5px 5px 0px 0px;
+    border-spacing: 0;
+}
+
+.price__table-upper {
+    width: 49%;
     border-collapse: separate;
     border-radius: 5px 5px 0px 0px;
     border-spacing: 0;
