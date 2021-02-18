@@ -10,6 +10,10 @@
         content: url('../img/calc/calc-bg1.png');
         top: 223px;
         left: 0;
+
+        @media (max-width: 1090px) {
+            display: none;
+        }
     }
 
     &::after {
@@ -17,6 +21,14 @@
         content: url('../img/calc/calc-bg2.png');
         top: 223px;
         right: 0;
+
+        @media (max-width: 1090px) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 460px) {
+        margin-bottom: 10px;
     }
 }
 
@@ -38,6 +50,11 @@
 
     span {
         color: #FEB74F;
+    }
+
+    @media (max-width: 460px) {
+        font-size: 22px;
+        margin-bottom: 20px;
     }
 }
 
