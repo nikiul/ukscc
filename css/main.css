@@ -43,20 +43,29 @@ body {
     margin-bottom: 68px;
   }
 }
-.header__burger-wrap {
+.toggle-sidebar {
   display: none;
-  width: 40px;
-  height: 40px;
-  background-color: red;
 }
 @media (max-width: 460px) {
-  .header__burger-wrap {
+  .toggle-sidebar {
+    padding: 0;
+    width: 40px;
+    height: 40px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: none;
+    outline: none;
+    background-color: #262730;
   }
 }
-.header__burger {
+.menu-icon-wrapper {
   width: 40px;
   height: 40px;
   display: -webkit-box;
@@ -68,35 +77,59 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: none;
-  outline: none;
 }
-.header__burger-icon {
+.menu-icon {
   position: relative;
   width: 30px;
   height: 3px;
-  border-radius: 100px;
   background-color: #FEB74F;
 }
-.header__burger-icon::before {
+.menu-icon::before {
   position: absolute;
-  content: "";
   left: 0;
   top: -10px;
-  width: 28px;
+  content: '';
+  width: 30px;
   height: 3px;
-  border-radius: 100px;
   background-color: #FEB74F;
+  -webkit-transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+  transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
 }
-.header__burger-icon::after {
+.menu-icon::after {
   position: absolute;
-  content: "";
   left: 0;
   top: 10px;
-  width: 28px;
+  content: '';
+  width: 30px;
   height: 3px;
-  border-radius: 100px;
   background-color: #FEB74F;
+  -webkit-transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+  transition: top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s, -webkit-transform 0.2s ease-in;
+}
+.menu-icon.menu-icon-active {
+  background-color: transparent;
+}
+.menu-icon.menu-icon-active::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 0;
+  -webkit-transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
+  transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s, -webkit-transform 0.2s ease-in 0.2s;
+}
+.menu-icon.menu-icon-active::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 0;
+  -webkit-transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
+  transition: top 0.2s linear, -webkit-transform 0.2s ease-in 0.2s;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s, -webkit-transform 0.2s ease-in 0.2s;
 }
 .header__upper {
   display: -webkit-box;
@@ -198,7 +231,49 @@ body {
 @media (max-width: 460px) {
   .nav__item a {
     font-size: 20px;
+    padding: 0;
+    margin-bottom: 40px;
   }
+}
+@media (max-width: 460px) {
+  .nav__item {
+    margin-bottom: 20px;
+  }
+}
+.header__mobile-nav {
+  display: none;
+}
+@media (max-width: 460px) {
+  .header__mobile-nav {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding-top: 15px;
+    padding-left: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform: translateX(110%);
+            transform: translateX(110%);
+    position: fixed;
+    background-color: #262730f6;
+    z-index: 10;
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    -webkit-transition: -webkit-transform 0.3s ease-in;
+    transition: -webkit-transform 0.3s ease-in;
+    transition: transform 0.3s ease-in;
+    transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  }
+}
+.header__mobile-nav-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 .header__call {
   margin: 0;
